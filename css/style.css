@@ -3,10 +3,13 @@ header {
     justify-content: space-between;
 }
 .sign-up {
-    display: flex;
+    display: none;
     margin-top: 12px;
     margin-left: auto;
     width: 180px;
     text-align: center;
     background-color: blue;
+}
+.show {
+    display: flex;
 }
