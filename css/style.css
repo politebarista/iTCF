@@ -5,7 +5,8 @@ header {
 .sign-up {
     display: none;
     margin-top: 12px;
-    margin-left: auto;
+    position: absolute;
+    right: 12px;
     width: 180px;
     text-align: center;
     background-color: blue;
