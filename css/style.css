@@ -10,9 +10,9 @@ header {
     text-align: center;
     background-color: blue;
 }
-#sign-upBtn {
-    display: none;
-}
 .show {
     display: flex;
+}
+.hide {
+    display: none;
 }

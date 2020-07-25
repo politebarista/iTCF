@@ -1,13 +1,15 @@
 const signupBtn = document.getElementById('sign-upBtn');
 
-function getCookie(authorizedAs) {
+var name = 'authorizedAs';
+
+function getCookie(name) {
     let matches = document.cookie.match(new RegExp(
       "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
   }
 
-if (!getCookie) {
+if (getCookie) {
     signupBtn.classList.add('show');
 }
 
