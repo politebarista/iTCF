@@ -1,16 +1,10 @@
 const signupBtn = document.getElementById('sign-upBtn');
 
-var name = 'authorizedAs';
+function getcookie(a) {var b = new RegExp(a+'=([^;]){1,}');var c = b.exec(document.cookie);if(c) c = c[0].split('=');else return false;return c[1] ? c[1] : false;}
 
-function getCookie(name) {
-    let matches = document.cookie.match(new RegExp(
-      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
-
-if (getCookie) {
-    signupBtn.classList.add('show');
+var havecookie = getcookie("authorizedAs");
+if (!havecookie) {
+    signupBtn.classList.remove("hide");
 }
 
 const signupWin = document.querySelector(".sign-up");
