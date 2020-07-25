@@ -17,3 +17,6 @@
         setcookie("authorizedAs", $login, time()+3600, '/'); // пока тут только на час, мб потом изменить надо
     }
 ?>
+<head>
+<meta http-equiv="refresh" content="2;URL=../index.html" />
+</head>
