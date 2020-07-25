@@ -11,12 +11,16 @@
 
     $result = mysqli_query($link, $sql);
     if (!$result) {
-        print("Ошибка при выполнении запроса. Запрос не выполнен.");
+        if (mysqli_error($link)=="Duplicate entry '$login' for key 'login'") {
+            print("Пользователь с данным именем уже зарегистрирован, попробуйте другое.");
+        } else {
+            print("Ошибка при выполнении запроса. Запрос не выполнен.");
+        }
     } else {
         print("Вы успешно зарегистрированны!");
         setcookie("authorizedAs", $login, time()+3600, '/'); // пока тут только на час, мб потом изменить надо
     }
 ?>
 <head>
-<meta http-equiv="refresh" content="2;URL=../index.html" />
+<meta http-equiv="refresh" content="3;URL=../index.html" />
 </head>
