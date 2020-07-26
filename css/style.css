@@ -2,7 +2,7 @@ header {
     display: flex;
     justify-content: space-between;
 }
-.sign-up {
+.sign {
     display: none;
     margin-top: 12px;
     position: absolute;

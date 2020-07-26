@@ -12,6 +12,7 @@ if (!havecookie) {
 }
 
 const signupWin = document.querySelector(".sign-up");
+const signinWin = document.querySelector(".sign-in");
 
 signupBtn.addEventListener('click', check);
 function check() {
@@ -20,6 +21,17 @@ function check() {
         console.log('Убрал');
     } else {
         signupWin.classList.add('show');
+        console.log('Добавил');
+    }
+}
+
+signinBtn.addEventListener('click', check);
+function check() {
+    if (signinWin.classList.contains('show')) {
+        signinWin.classList.remove('show');
+        console.log('Убрал');
+    } else {
+        signinWin.classList.add('show');
         console.log('Добавил');
     }
 }
