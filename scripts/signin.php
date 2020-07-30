@@ -5,16 +5,15 @@
     }
 
     $login = trim($_REQUEST['login']);
-    $password = password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
+    $password = trim($_REQUEST['password']);
 
     $sql = "SELECT login, password FROM users WHERE login='$login'";
     
     $query = mysqli_query($link, $sql);
-    // if ($query['password']===введенному паролю)
-    $result = password_verify($password, mysqli_result['password']);
-    if ($result) {
-        print("аториазция успешна");
+    $array = mysqli_fetch_array($query);
+    if (password_verify($password, $array['password'])) {
+        echo "Вы успешно залогинены";
+        setcookie("authorizedAs", $login, time()+3600, '/');
     } else {
-        print("чет пошло не так");
+        echo "Что-то пошло не так";
     }
-?>

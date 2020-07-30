@@ -25,7 +25,7 @@ function check() {
     }
 }
 
-signinBtn.addEventListener('click', check);
+signinBtn.addEventListener('click', check); // тут какая-то херня, т.к обработчик один на обе кнопки, и в итоге он откроет авторизацию, надо пофиксить
 function check() {
     if (signinWin.classList.contains('show')) {
         signinWin.classList.remove('show');
