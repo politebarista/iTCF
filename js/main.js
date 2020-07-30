@@ -14,8 +14,8 @@ if (!havecookie) {
 const signupWin = document.querySelector(".sign-up");
 const signinWin = document.querySelector(".sign-in");
 
-signupBtn.addEventListener('click', check);
-function check() {
+signupBtn.addEventListener('click', checkSignup);
+function checkSignup() {
     if (signupWin.classList.contains('show')) {
         signupWin.classList.remove('show');
         console.log('Убрал');
@@ -25,8 +25,8 @@ function check() {
     }
 }
 
-signinBtn.addEventListener('click', check); // тут какая-то херня, т.к обработчик один на обе кнопки, и в итоге он откроет авторизацию, надо пофиксить
-function check() {
+signinBtn.addEventListener('click', checkSignin);
+function checkSignin() {
     if (signinWin.classList.contains('show')) {
         signinWin.classList.remove('show');
         console.log('Убрал');
